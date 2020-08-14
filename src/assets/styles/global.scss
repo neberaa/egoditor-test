@@ -1,0 +1,48 @@
+// Basic styles
+body {
+  padding: 0;
+  margin: 0;
+}
+#app {
+  font-family: "sourceSans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+h1, {
+  margin: 0;
+}
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background-color: transparent;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+  &:focus {
+    outline: none;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+
+// Variables
+$blue: #00BFFF;
+$dark-blue: #247BD4;
+$navy: #2B4472;
+$dark-navy: #1C2A4C;
+$navy-gray: #53678C;
+$dark-gray: #707F86;
+$gray: #F5F8FA;
+$white: #fff;
