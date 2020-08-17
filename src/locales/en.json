@@ -1,0 +1,10 @@
+{
+  "information": {
+    "customerId": "Customer ID",
+    "signupDate": "Signup Date",
+    "account": "Account",
+    "loginEmail": "Login Email",
+    "password": "Password",
+    "changeEmail": "changeEmail"
+  }
+}

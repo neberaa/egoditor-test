@@ -1,0 +1,10 @@
+{
+  "information": {
+    "customerId": "Kundennummer",
+    "signupDate": "Anmeldedatum",
+    "account": "Konto",
+    "loginEmail": "Einloggen",
+    "password": "Passwort",
+    "changeEmail": "Ändern Sie die E-Mail\n"
+  }
+}
