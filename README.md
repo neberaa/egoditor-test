@@ -1,19 +1,12 @@
-# egoditor
-
-## Project setup
+# Egoditor test 
+## Local project setup
+### 1. Install all the dependencies
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 2. Run the command to compile and hot-reloads for development on local machine
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
