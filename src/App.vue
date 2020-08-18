@@ -20,6 +20,9 @@ export default class App extends Vue {}
 </script>
 
 <style lang="scss">
+  * {
+    box-sizing: border-box;
+  }
   body {
     padding: 0;
     margin: 0;
@@ -30,8 +33,23 @@ export default class App extends Vue {}
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
 
-    h1, {
+    h1, h2, h3, h4 {
       margin: 0;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 36px;
+      color: $dark-navy;
+    }
+    h2 {
+      font-size: 30px;
+      color: $dark-navy;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    h4 {
+      font-size: 18px;
     }
 
     button {
@@ -60,6 +78,22 @@ export default class App extends Vue {}
     }
     a {
       text-decoration: none;
+    }
+  }
+  // Vue fade transition
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .3s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      padding: 0;
     }
   }
 </style>

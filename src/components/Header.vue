@@ -5,12 +5,24 @@
         <a
           href="/"
           class="logo">
-          <i class="logo__icon"/>
-          <h3 class="logo__text">QR Code Generator</h3>
+          <img
+            src="@/assets/icons/logo-icon-blue.svg"
+            class="logo__icon"/>
+          <h4 class="logo__text">
+            QR Code Generator
+          </h4>
         </a>
         <button class="menu"/>
       </div>
       <div class="column column--right">
+        <div class="locales">
+          <button
+            class="locales__toggler"
+            v-for="(lang, i) in langs"
+            :key="`Lang${i}`"
+            @click="toggleLang(lang)"
+            v-text="lang"/>
+        </div>
         <a href="/" class="notifications"></a>
         <a href="/" class="help"></a>
         <a href="/" class="account-home">
@@ -23,11 +35,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Watch, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Header extends Vue {
+  private langs: string[] = ["en", "de"];
 
+  private toggleLang(lang: string): void {
+    this.$i18n.locale = lang;
+  };
 }
 </script>
 
@@ -36,14 +52,29 @@ export default class Header extends Vue {
 .header {
   width: 100%;
   height: 60px;
-  border-bottom: 2px solid $gray;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25);
+  position: relative;
   &__content {
     padding: 0 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: inherit;
     .column {
       display: flex;
+      &--left {
+        .logo {
+          display: flex;
+          color: $dark-navy;
+          &:active {
+            color: $dark-navy;
+          }
+          &__icon {
+            width: 20px;
+            margin-right: 10px;
+          }
+        }
+      }
     }
   }
 }

@@ -1,10 +1,40 @@
 {
   "information": {
+    "title": "Informationen",
     "customerId": "Kundennummer",
     "signupDate": "Anmeldedatum",
     "account": "Konto",
     "loginEmail": "Einloggen",
     "password": "Passwort",
-    "changeEmail": "Ändern Sie die E-Mail\n"
+    "changeEmail": "Ändern Sie die E-Mail"
+  },
+  "contact": {
+    "title": "Hauptansprechpartner",
+    "description": "Bitte geben Sie unten Ihre Kontaktinformationen an.",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "phone": "Telefonnummer",
+    "company": "Unternehmen",
+    "street": "Straße",
+    "city": "Stadt",
+    "zipCode": "Postleitzahl",
+    "country": "Land",
+    "website": "Webseite"
+  },
+  "usage": {
+    "title": "Verwendung",
+    "scans": "Scans",
+    "dynamicCodes": "Dynamische Codes",
+    "staticCodes": "Statische Codes",
+    "users": "Benutzer"
+  },
+  "who": {
+    "title": "Wer bist du?",
+    "description": "Für die bestmögliche Erfahrung teilen Sie uns bitte mit, wer Sie sind",
+    "business": "Unternehmen",
+    "agency": "Agentur",
+    "nonprofit": "Gemeinnützig",
+    "educational": "Lehrreich",
+    "private": "Privat"
   }
 }

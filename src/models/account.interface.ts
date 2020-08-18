@@ -39,6 +39,7 @@ export interface IUserData {
   street?: string;
   zipCode?: number;
   webSite?: string;
+  email: string;
   id: string;
   signUpDate: Date;
   accountType: string;

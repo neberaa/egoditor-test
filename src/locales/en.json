@@ -1,10 +1,40 @@
 {
   "information": {
+    "title": "Information",
     "customerId": "Customer ID",
     "signupDate": "Signup Date",
     "account": "Account",
     "loginEmail": "Login Email",
     "password": "Password",
     "changeEmail": "changeEmail"
+  },
+  "contact": {
+    "title": "Primary Contact",
+    "description": "Please provide your contact information below.",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone Number",
+    "company": "Company",
+    "street": "Street",
+    "city": "City",
+    "zipCode": "Zip Code",
+    "country": "Country",
+    "website": "Website"
+  },
+  "usage": {
+    "title": "Usage",
+    "scans": "Scans",
+    "dynamicCodes": "DynamicCodes",
+    "staticCodes": "Static Codes",
+    "users": "Users"
+  },
+  "who": {
+    "title": "Who are you?",
+    "description": "For the best possible experience, please let us know who you are",
+    "business": "Business",
+    "agency": "Agency",
+    "nonprofit": "Nonprofit",
+    "educational": "Educational",
+    "private": "Private"
   }
 }
