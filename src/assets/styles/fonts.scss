@@ -31,3 +31,12 @@
     url('~@/assets/fonts/sourcesanspro-bold.woff') format('woff'),
     url('~@/assets/fonts/sourcesanspro-bold.woff2') format('woff2');
 }
+
+@font-face {
+  font-family: 'sourceSans';
+  font-style: normal;
+  font-weight: 900;
+  src:
+    url('~@/assets/fonts/sourcesanspro-black.woff') format('woff'),
+    url('~@/assets/fonts/sourcesanspro-black.woff2') format('woff2');
+}

@@ -35,7 +35,7 @@ export default class App extends Vue {}
 
     h1, h2, h3, h4 {
       margin: 0;
-      font-weight: 700;
+      font-weight: 900;
     }
     h1 {
       font-size: 36px;
@@ -82,7 +82,7 @@ export default class App extends Vue {}
   }
   // Vue fade transition
   .fade-enter-active, .fade-leave-active {
-    transition: opacity .3s;
+    transition: opacity .5s;
   }
   .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0;

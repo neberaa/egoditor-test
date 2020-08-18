@@ -8,9 +8,10 @@
           <img
             src="@/assets/icons/logo-icon-blue.svg"
             class="logo__icon"/>
-          <h4 class="logo__text">
+          <h3 class="logo__text">
             QR Code Generator
-          </h4>
+          </h3>
+          <span class="logo__text--pro">pro</span>
         </a>
         <button class="menu"/>
       </div>
@@ -51,7 +52,7 @@ export default class Header extends Vue {
 <style scoped lang="scss">
 .header {
   width: 100%;
-  height: 60px;
+  height: 80px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25);
   position: relative;
   &__content {
@@ -70,8 +71,21 @@ export default class Header extends Vue {
             color: $dark-navy;
           }
           &__icon {
-            width: 20px;
+            width: 25px;
             margin-right: 10px;
+          }
+          &__text {
+            &--pro {
+              background: $blue;
+              color: $white;
+              text-transform: uppercase;
+              font-weight: 700;
+              padding: 0 3px;
+              border-radius: 3px;
+              height: 15px;
+              font-size: 11px;
+              margin-left: 2px;
+            }
           }
         }
       }
