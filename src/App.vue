@@ -32,53 +32,52 @@ export default class App extends Vue {}
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
+  }
+  h1, h2, h3, h4 {
+    margin: 0;
+    font-weight: 900;
+  }
+  h1 {
+    font-size: 36px;
+    color: $dark-navy;
+  }
+  h2 {
+    font-size: 30px;
+    color: $dark-navy;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  h4 {
+    font-size: 18px;
+  }
 
-    h1, h2, h3, h4 {
-      margin: 0;
-      font-weight: 900;
-    }
-    h1 {
-      font-size: 36px;
-      color: $dark-navy;
-    }
-    h2 {
-      font-size: 30px;
-      color: $dark-navy;
-    }
-    h3 {
-      font-size: 24px;
-    }
-    h4 {
-      font-size: 18px;
+  button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background-color: transparent;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    text-align: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+
+    &:focus {
+      outline: none;
     }
 
-    button {
-      border: none;
-      margin: 0;
+    &::-moz-focus-inner {
+      border: 0;
       padding: 0;
-      overflow: visible;
-      background-color: transparent;
-      cursor: pointer;
-      color: inherit;
-      font: inherit;
-      text-align: inherit;
-      line-height: normal;
-      -webkit-font-smoothing: inherit;
-      -moz-osx-font-smoothing: inherit;
-      -webkit-appearance: none;
-
-      &:focus {
-        outline: none;
-      }
-
-      &::-moz-focus-inner {
-        border: 0;
-        padding: 0;
-      }
     }
-    a {
-      text-decoration: none;
-    }
+  }
+  a {
+    text-decoration: none;
   }
   // Vue fade transition
   .fade-enter-active, .fade-leave-active {

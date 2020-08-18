@@ -13,22 +13,32 @@
           </h3>
           <span class="logo__text--pro">pro</span>
         </a>
-        <button class="menu"/>
+        <button class="menu">
+          <i class="menu__icon fas fa-bars"/>
+        </button>
       </div>
       <div class="column column--right">
         <div class="locales">
           <button
-            class="locales__toggler"
+            class="locales__item"
+            :class="{'locales__item--active': $i18n.locale === lang}"
             v-for="(lang, i) in langs"
             :key="`Lang${i}`"
             @click="toggleLang(lang)"
             v-text="lang"/>
         </div>
-        <a href="/" class="notifications"></a>
-        <a href="/" class="help"></a>
+        <a href="/" class="notifications">
+          <i class="notifications__icon far fa-bell"/>
+        </a>
+        <a href="/" class="help">
+          <i class="help__icon far fa-question-circle"/>
+        </a>
         <a href="/" class="account-home">
-          <i class="account-home__icon"></i>
-          <span class="account-home__text">Account</span>
+          <i class="account-home__icon far fa-user"/>
+          <span
+            class="account-home__text">
+            Account
+          </span>
         </a>
       </div>
     </div>
@@ -36,7 +46,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Watch, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Header extends Vue {
@@ -50,6 +60,15 @@ export default class Header extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+%dash {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 2px;
+  background: $dark-gray;
+  height: 20px;
+  opacity: .3;
+}
 .header {
   width: 100%;
   height: 80px;
@@ -86,6 +105,51 @@ export default class Header extends Vue {
               font-size: 11px;
               margin-left: 2px;
             }
+          }
+        }
+        .menu {
+          margin-left: 60px;
+          position: relative;
+          display: block;
+          &::before {
+            @extend %dash;
+            left: -30px;
+          }
+          &__icon {
+            font-size: 19px;
+            color: $blue;
+          }
+        }
+      }
+      &--right {
+        .locales {
+          margin-right: 60px;
+          position: relative;
+          &::after {
+            @extend %dash;
+            top: 0;
+            right: -20px;
+          }
+          &__item {
+            text-transform: uppercase;
+            color: $dark-gray;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 300ms ease;
+            opacity: 0.6;
+            &--active {
+              color: $blue;
+            }
+            &:not(:last-of-type) {
+              margin-right: 20px;
+            }
+          }
+        }
+        .notifications {
+          margin-right: 20px;
+          &__icon {
+            font-size: 21px;
+            color: $blue;
           }
         }
       }
