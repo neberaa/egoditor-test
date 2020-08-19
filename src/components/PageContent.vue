@@ -11,10 +11,21 @@
           type="text"
           v-model="pageTitle">
       </label>
-      <i
-        class="title__icon"
-        @click="isEditing = !isEditing"
-        v-text="!isEditing ? 'edit' : 'save'"/>
+      <div
+        class="title__change"
+        @click="isEditing = !isEditing">
+        <span class="text" v-text="!isEditing ? 'edit' : 'save'"/>
+        <div
+          class="icon"
+          v-show="!isEditing">
+          <i class="fas fa-pencil-alt"/>
+        </div>
+        <div
+          class="icon"
+          v-show="isEditing">
+          <i class="fas fa-check"/>
+        </div>
+      </div>
     </div>
     <Tabs/>
   </div>
@@ -42,9 +53,49 @@ export default class PageContent extends Vue {
   background: $gray;
   .title {
     text-align: left;
-    padding: 30px 45px;
+    padding: 30px 90px;
     background: $white;
     display: flex;
+    @include screenBreakpoint2(phone) {
+      padding: 30px 15px;
+      flex-wrap: wrap;
+    }
+    &__text,
+    &__input {
+      max-width: 100%;
+      min-width: 260px;
+      margin-right: 20px;
+    }
+    &__text {
+      height: 53px;
+      border: 1px solid transparent;
+    }
+    &__input {
+      border: 1px solid $navy-gray;
+      border-radius: 4px;
+      font-size: 36px;
+      font-weight: 900;
+      color: $dark-navy;
+      max-width: 300px;
+      &:focus {
+        outline: none;
+      }
+    }
+    &__change {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      .text {
+        margin-right: 5px;
+        color: $dark-blue;
+        text-transform: capitalize;
+        font-weight: 900;
+      }
+      .icon {
+        color: $blue;
+        font-size: 14px;
+      }
+    }
   }
 }
 </style>

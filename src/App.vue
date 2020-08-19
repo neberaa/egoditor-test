@@ -22,6 +22,7 @@ export default class App extends Vue {}
 <style lang="scss">
   * {
     box-sizing: border-box;
+    font-family: "sourceSans", sans-serif;
   }
   body {
     padding: 0;
@@ -36,14 +37,13 @@ export default class App extends Vue {}
   h1, h2, h3, h4 {
     margin: 0;
     font-weight: 900;
+    color: $dark-navy;
   }
   h1 {
     font-size: 36px;
-    color: $dark-navy;
   }
   h2 {
     font-size: 30px;
-    color: $dark-navy;
   }
   h3 {
     font-size: 24px;
@@ -78,6 +78,23 @@ export default class App extends Vue {}
   }
   a {
     text-decoration: none;
+  }
+  input,
+  select {
+    border: 1px solid lighten($dark-gray, 20%);
+    border-radius: 4px;
+    font-family: "sourceSans", sans-serif;
+    font-size: 14px;
+    color: $dark-gray;
+    padding: 7px;
+    transition: border 300ms ease;
+    &:focus {
+      outline: none;
+      border: 1px solid $dark-navy;
+    }
+    &:invalid {
+      border: 1px solid $coral;
+    }
   }
   // Vue fade transition
   .fade-enter-active, .fade-leave-active {

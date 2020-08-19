@@ -75,11 +75,14 @@ export default class Header extends Vue {
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25);
   position: relative;
   &__content {
-    padding: 0 15px;
+    padding: 0 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: inherit;
+    @include screenBreakpoint2(phone) {
+      padding: 0 15px;
+    }
     .column {
       display: flex;
       &--left {
