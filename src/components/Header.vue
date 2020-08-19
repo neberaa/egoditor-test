@@ -28,13 +28,13 @@
             v-text="lang"/>
         </div>
         <a href="/" class="notifications">
-          <i class="notifications__icon far fa-bell"/>
+          <i class="notifications__icon far fa-bell icon"/>
         </a>
         <a href="/" class="help">
-          <i class="help__icon far fa-question-circle"/>
+          <i class="help__icon far fa-question-circle icon"/>
         </a>
         <a href="/" class="account-home">
-          <i class="account-home__icon far fa-user"/>
+          <i class="account-home__icon far fa-user icon"/>
           <span
             class="account-home__text">
             Account
@@ -83,6 +83,10 @@ export default class Header extends Vue {
     .column {
       display: flex;
       &--left {
+        @include screenBreakpoint2(phone) {
+          width: 100%;
+          justify-content: space-between;
+        }
         .logo {
           display: flex;
           color: $dark-navy;
@@ -114,16 +118,29 @@ export default class Header extends Vue {
           &::before {
             @extend %dash;
             left: -30px;
+            @include screenBreakpoint2(phone) {
+              display: none;
+            }
           }
           &__icon {
             font-size: 19px;
             color: $blue;
+            @include screenBreakpoint2(phone) {
+              font-size: 25px;
+            }
           }
         }
       }
       &--right {
+        @include screenBreakpoint2(phone) {
+          display: none;
+        }
+        .icon {
+          font-size: 21px;
+          color: $blue;
+        }
         .locales {
-          margin-right: 60px;
+          margin-right: 40px;
           position: relative;
           &::after {
             @extend %dash;
@@ -133,7 +150,7 @@ export default class Header extends Vue {
           &__item {
             text-transform: uppercase;
             color: $dark-gray;
-            font-weight: 700;
+            font-weight: 900;
             font-size: 16px;
             transition: all 300ms ease;
             opacity: 0.6;
@@ -147,9 +164,24 @@ export default class Header extends Vue {
         }
         .notifications {
           margin-right: 20px;
+        }
+        .help {
+          margin-right: 40px;
+          position: relative;
+          &::after {
+            @extend %dash;
+            right: -20px;
+            top: 0;
+          }
+        }
+        .account-home {
           &__icon {
-            font-size: 21px;
-            color: $blue;
+            margin-right: 5px;
+          }
+          &__text {
+            font-weight: 900;
+            color: $dark-blue;
+            font-size: 18px;
           }
         }
       }
