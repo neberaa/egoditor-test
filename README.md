@@ -1,5 +1,4 @@
-# Egoditor GmbH
-![](https://github.com/neberaa/egoditor-test/src/assets/logo.png)
+# ![](src/assets/logo.png) Egoditor GmbH
 
 **Test work for QR Code Generator**
 

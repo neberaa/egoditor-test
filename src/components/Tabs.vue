@@ -379,7 +379,7 @@ export default class Tabs extends Vue {
   private countries: ICountry[] = countryList;
   private data: IUserData = {} as any;
   private activeTab: number = 0;
-  private apiEndpoint: string = "http://my-json-server.typicode.com/neberaa/fakeapi/userData";
+  private apiEndpoint: string = "https://my-json-server.typicode.com/neberaa/fakeapi/userData";
   private isLoaded: boolean = false;
   private formIsSubmitted: boolean = false;
   private popupIsClosed: boolean = false;
