@@ -33,7 +33,7 @@
         v-show="isLoaded && activeTab === 0">
         <div class="column column--left">
           <section class="column__item column__item--information">
-            <h3
+            <h2
               class="row-label"
               v-text="$t('information.title')"/>
             <div class="row">
@@ -82,7 +82,7 @@
             </div>
           </section>
           <section class="column__item column__item--contact">
-            <h3
+            <h2
               class="row-label"
               v-text="$t('contact.title')"/>
             <span
@@ -256,6 +256,109 @@
           </section>
         </div>
         <div class="column column--right">
+          <section class="column__item column__item--usage">
+            <h2
+              class="row-label"
+              v-text="$t('usage.title')"/>
+            <div class="row">
+              <div class="row__element row__element--w25">
+                <h4
+                  class="title"
+                  v-text="$t('usage.scans')"/>
+                <span
+                  class="value"
+                  v-text="scans"/>
+                <span
+                  class="limit"
+                  v-text="scansLimit"/>
+                <button class="upgrade">
+                  Upgrade
+                </button>
+              </div>
+              <div class="row__element row__element--w25">
+                <h4
+                  class="title"
+                  v-text="$t('usage.dynamicCodes')"/>
+                <span
+                  class="value"
+                  v-text="dynamicCodes"/>
+                <span
+                  class="limit"
+                  v-text="dynamicCodesLimit"/>
+                <button class="upgrade">
+                  Upgrade
+                </button>
+              </div>
+              <div class="row__element row__element--w25">
+                <h4
+                  class="title"
+                  v-text="$t('usage.staticCodes')"/>
+                <span
+                  class="value"
+                  v-text="staticCodes"/>
+                <span
+                  class="limit"
+                  v-text="staticCodesLimit"/>
+                <button class="upgrade">
+                  Upgrade
+                </button>
+              </div>
+              <div class="row__element row__element--w25">
+                <h4
+                  class="title"
+                  v-text="$t('usage.users')"/>
+                <span
+                  class="value"
+                  v-text="users"/>
+                <span
+                  class="limit"
+                  v-text="usersLimit"/>
+                <button class="upgrade">
+                  Add Users
+                </button>
+              </div>
+            </div>
+          </section>
+          <section class="column__item column__item--who">
+            <h2
+              class="row-label"
+              v-text="$t('who.title')"/>
+            <span
+              class="row-description"
+              v-text="$t('who.description')"/>
+            <div class="row">
+              <div class="row__element row__element--w20">
+                <i class="icon fas fa-briefcase"/>
+                <h4
+                  class="title"
+                  v-text="$t('who.business')"/>
+              </div>
+              <div class="row__element row__element--w20">
+                <i class="icon fas fa-store"/>
+                <h4
+                  class="title"
+                  v-text="$t('who.agency')"/>
+              </div>
+              <div class="row__element row__element--w20">
+                <i class="icon fas fa-hand-holding-heart"/>
+                <h4
+                  class="title"
+                  v-text="$t('who.nonprofit')"/>
+              </div>
+              <div class="row__element row__element--w20">
+                <i class="icon fas fa-graduation-cap"/>
+                <h4
+                  class="title"
+                  v-text="$t('who.educational')"/>
+              </div>
+              <div class="row__element row__element--w20">
+                <i class="icon far fa-user"/>
+                <h4
+                  class="title"
+                  v-text="$t('who.private')"/>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
     </transition>
@@ -296,6 +399,30 @@ export default class Tabs extends Vue {
   get email() {
     return this.activeTabContent?.email;
   }
+  get scans() {
+    return this.activeTabContent?.scans;
+  }
+  get dynamicCodes() {
+    return this.activeTabContent?.dynamicCodes;
+  }
+  get staticCodes() {
+    return this.activeTabContent?.staticCodes;
+  }
+  get users() {
+    return this.activeTabContent?.users;
+  }
+  get scansLimit() {
+    return this.activeTabContent?.scansLimit;
+  }
+  get dynamicCodesLimit() {
+    return this.activeTabContent?.dynamicCodesLimit;
+  }
+  get staticCodesLimit() {
+    return this.activeTabContent?.staticCodesLimit;
+  }
+  get usersLimit() {
+    return this.activeTabContent?.usersLimit;
+  }
 
   async api<T>(request: RequestInfo): Promise<T> {
     const response = await fetch(request);
@@ -333,7 +460,6 @@ export default class Tabs extends Vue {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .tabs {
   .popup {
@@ -346,6 +472,7 @@ export default class Tabs extends Vue {
     padding: 60px 30px;
     border-radius: 10px;
     box-shadow: 0 1px 5px 1px rgba(0,0,0,0.1);
+    position: fixed;
     &--visible {
       top: 50%;
       opacity: 1;
@@ -419,6 +546,22 @@ export default class Tabs extends Vue {
           text-align: left;
         }
         &__element {
+          &--w20 {
+            flex: 0 0;
+            flex-basis: calc((100% - 60px) / 5);
+            @media screen and (max-width: 1450px) {
+              flex-basis: calc((100% - 15px) / 2);
+              margin-bottom: 15px;
+            }
+          }
+          &--w25 {
+            flex: 0 0;
+            flex-basis: calc((100% - 45px) / 4);
+            @media screen and (max-width: 1150px) {
+              flex-basis: calc((100% - 15px) / 2);
+              margin-bottom: 15px;
+            }
+          }
           &--w33 {
             flex: 0 0;
             flex-basis: calc((100% - 15px) / 3);
@@ -538,7 +681,7 @@ export default class Tabs extends Vue {
             .placeholder {
               position: absolute;
               left: 11px;
-              top: 7px;
+              top: 8px;
               opacity: 0.2;
               font-size: 14px;
               pointer-events: none;
@@ -563,6 +706,89 @@ export default class Tabs extends Vue {
                   font-weight: 900;
                   text-transform: uppercase;
                 }
+              }
+            }
+          }
+        }
+        &--usage {
+          margin-bottom: 60px;
+          @include screenBreakpoint2(phone) {
+            margin-bottom: 30px;
+          }
+          .row-label {
+            margin-bottom: 30px;
+          }
+          .row__element {
+            border: 1px solid lighten($dark-gray, 30%);
+            border-radius: 4px;
+            padding: 15px 15px 30px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            .value {
+              position: relative;
+              padding-bottom: 20px;
+              font-size: 29px;
+              &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 1px;
+                background: $dark-gray;
+                height: 20px;
+                opacity: .3;
+                transform: rotate(70deg);
+                left: calc(50%);
+              }
+            }
+            .limit {
+              font-style: italic;
+              color: $dark-gray;
+              font-weight: 700;
+            }
+            .upgrade {
+              background: $blue;
+              border-radius: 20px;
+              padding: 4px 10px;
+              color: $white;
+              font-weight: 700;
+              font-size: 12px;
+              text-transform: uppercase;
+              @include center(x);
+              bottom: -10px;
+            }
+          }
+        }
+        &--who {
+          .row-description {
+            text-align: left;
+            margin-bottom: 30px;
+            color: $navy-gray;
+            display: block;
+          }
+          .row {
+            display: flex;
+            &__element {
+              background: $white;
+              border-radius: 10px;
+              box-shadow: 0 1px 5px 1px rgba(0,0,0,0.1);
+              padding: 15px;
+              cursor: pointer;
+              transition: all 300ms ease;
+              &:hover {
+                box-shadow: 0 2px 7px 5px rgba(0,0,0,0.1);
+                transform: translate3d(-5px, -5px, 5px);
+              }
+              .icon {
+                color: $blue;
+                font-size: 38px;
+                margin-bottom: 15px;
+              }
+              .title {
+                font-size: 18px;
+                color: $dark-blue;
+                text-transform: uppercase;
+                font-weight: 700;
               }
             }
           }

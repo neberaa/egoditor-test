@@ -14,7 +14,9 @@
       <div
         class="title__change"
         @click="isEditing = !isEditing">
-        <span class="text" v-text="!isEditing ? 'edit' : 'save'"/>
+        <span
+          class="text"
+          v-text="!isEditing ? 'edit' : 'save'"/>
         <div
           class="icon"
           v-show="!isEditing">
@@ -46,7 +48,6 @@ export default class PageContent extends Vue {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .page-content {
   min-height: calc(100vh - #{$header-height});
@@ -67,13 +68,13 @@ export default class PageContent extends Vue {
       margin-right: 20px;
     }
     &__text {
-      height: 53px;
+      line-height: 73px;
       border: 1px solid transparent;
     }
     &__input {
       border: 1px solid $navy-gray;
       border-radius: 4px;
-      font-size: 36px;
+      font-size: 40px;
       font-weight: 900;
       color: $dark-navy;
       max-width: 300px;

@@ -16,4 +16,8 @@ export interface IUserData {
   dynamicCodes: number;
   staticCodes: number;
   users: number;
+  scansLimit: string;
+  dynamicCodesLimit: number;
+  staticCodesLimit: number;
+  usersLimit: number;
 }

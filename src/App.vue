@@ -40,7 +40,7 @@ export default class App extends Vue {}
     color: $dark-navy;
   }
   h1 {
-    font-size: 36px;
+    font-size: 40px;
   }
   h2 {
     font-size: 30px;
@@ -86,7 +86,7 @@ export default class App extends Vue {}
     font-family: "sourceSans", sans-serif;
     font-size: 14px;
     color: $dark-gray;
-    padding: 7px;
+    padding: 8px;
     transition: border 300ms ease;
     &:focus {
       outline: none;
